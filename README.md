@@ -126,4 +126,4 @@ Se os dados forem críticos, um e-mail será enviado automaticamente! 📬
 
 - Desenvolvido por Isabelle Firmino Rancan — Estudante de Análise e Desenvolvimento de Sistemas – IFMS
 - Projeto desenvolvido como atividade de Aplicações Distrubuídas.
-- [Vídeo com exemplo de uso]()
+- [Vídeo com exemplo de uso](https://drive.google.com/file/d/1496gNBDO5gTi0tto56tnesIvOCCazW3L/view?usp=sharing)
