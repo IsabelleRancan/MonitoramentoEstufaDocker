@@ -1,8 +1,10 @@
 import pika
 import json
+import os
 
 def send_to_queue(data):
-    connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+    rabbitmq_host = os.environ.get('RABBITMQ_HOST', 'rabbitmq')  # padrão: 'rabbitmq'
+    connection = pika.BlockingConnection(pika.ConnectionParameters(rabbitmq_host))
     channel = connection.channel()
     channel.queue_declare(queue='dados_criticos')
 

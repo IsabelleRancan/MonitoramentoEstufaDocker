@@ -1,16 +1,32 @@
 # Ignorar ambientes virtuais
 .venv/
+venv/
+ENV/
+
+# Ignorar arquivos de ambiente sensíveis
 .env
+email_service/.env
 
 # Ignorar banco de dados local
+*.db
 *.sqlite3
 
-# Ignorar arquivos do sistema
+# Ignorar arquivos compilados do Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# Ignorar arquivos de configuração do VSCode (opcional)
+# Ignorar logs e arquivos temporários
+*.log
+
+# Ignorar configurações locais do VSCode
 .vscode/
 
-# Ignorar senhas sensíveis (como de email, se você usou .env)
-email_service/.env
+# Ignorar arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar arquivos de backup ou temporários de editores
+*.bak
+*~

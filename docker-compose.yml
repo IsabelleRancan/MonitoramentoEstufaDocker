@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+  monitor_service:
+    container_name: monitor_service_app
+    build: ./monitor_service
+    depends_on:
+      - rabbitmq
+    volumes:
+      - ./monitor_service/estufa.db:/app/estufa.db
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+    ports:
+      - "5000:5000"
+
+  email_service:
+    container_name: email_service_app
+    build: ./email_service
+    depends_on:
+      - rabbitmq
+    env_file:
+      - .env

@@ -1,13 +1,10 @@
 import smtplib
 from email.message import EmailMessage
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
-
-EMAIL_REMETENTE = os.getenv("EMAIL_REMETENTE")
-SENHA_APP = os.getenv("SENHA_APP")
-EMAIL_DESTINO = os.getenv("EMAIL_DESTINO")
+EMAIL_REMETENTE = os.environ.get("EMAIL_REMETENTE")
+SENHA_APP = os.environ.get("SENHA_APP")
+EMAIL_DESTINO = os.environ.get("EMAIL_DESTINO")
 
 def enviar_email(dados):
     estufa_id = dados.get("id")
