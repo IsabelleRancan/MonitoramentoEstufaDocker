@@ -1,0 +1,59 @@
+# 1️⃣ Construir as imagens manualmente (sem subir os containers)
+docker-compose build
+
+# 2️⃣ Subir os containers normalmente (constrói se necessário)
+docker-compose up
+
+# 3️⃣ Subir os containers e RECONSTRUIR as imagens (caso você altere algo no código ou Dockerfile)
+docker-compose up --build
+
+# 4️⃣ Subir os containers em segundo plano (modo detached)
+docker-compose up -d
+
+# 5️⃣ Ver logs de um serviço específico (ex: email_service)
+docker-compose logs -f email_service
+
+# 6️⃣ Ver logs de todos os serviços
+docker-compose logs -f
+
+# 7️⃣ Parar todos os containers do projeto
+docker-compose down
+
+# 8️⃣ Parar todos os containers do Docker (de qualquer projeto)
+docker stop $(docker ps -q)
+
+# 9️⃣ Ver containers em execução
+docker ps
+
+# 🔟 Ver containers PARADOS também
+docker ps -a
+
+# 11️⃣ Ver IP de rede dos containers do projeto
+docker network inspect monitoramentoestufadocker_default
+
+# 12️⃣ Ver variáveis de ambiente ativas no container
+docker exec -it email_service_app printenv
+
+# 13️⃣ Acessar terminal de dentro de um container (útil para testes ou debug)
+docker exec -it email_service_app sh
+
+# 14️⃣ Limpar imagens não utilizadas
+docker image prune -f
+
+# 15️⃣ Limpar volumes não utilizados
+docker volume prune -f
+
+# 16️⃣ Ver imagens existentes
+docker images
+
+# 17️⃣ Ver volumes existentes
+docker volume ls
+
+# 18️⃣ Recriar containers do zero (build novo + down + up)
+docker-compose down && docker-compose up --build
+
+# 19️⃣ Rodar docker-compose com variáveis de ambiente do .env
+# (Isso acontece automaticamente se o arquivo se chama `.env`)
+# Mas se quiser passar outro nome:
+docker-compose --env-file .env up --build
+
