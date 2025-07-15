@@ -26,6 +26,7 @@ MonitoramentoEstufa/
 ├── .env.example
 ├── .gitignore
 ├── Atividade FINAL - PROVA.pdf
+├── comandos.txt
 ├── docker-compose.yml
 ├── README.md
 
@@ -81,6 +82,7 @@ Em um terminal:
 ``` bash
 docker-compose up --build
 ```
+> Você pode consultar alguns comandos úteis no arquivo `comandos.txt` deste projeto.
 
 ---
 
@@ -121,4 +123,4 @@ O serviço de e-mail ficará escutando a fila e enviando os alertas automaticame
 
 - Desenvolvido por Isabelle Firmino Rancan — Estudante de Análise e Desenvolvimento de Sistemas – IFMS
 - Projeto desenvolvido como atividade final de Aplicações Distrubuídas.
-- [Vídeo com exemplo de uso e explicação do ambiente Docker]()
+- [Vídeo com exemplo de uso e explicação do ambiente Docker](https://drive.google.com/file/d/18xn8sj2suomm52Yltzqf4LUT2ZJITkuM/view?usp=sharing)
